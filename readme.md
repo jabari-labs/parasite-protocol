@@ -396,8 +396,11 @@ i built this brick by brick. now it is time to ship.
 
 links
 
+- site: [jabari.up.railway.app](https://jabari.up.railway.app)
+- darkpaper: [jabari.up.railway.app/darkpaper](https://jabari.up.railway.app/darkpaper)
 - github: [github.com/francis-codex/parasite-protocol](https://github.com/francis-codex/parasite-protocol)
 - seedless: [github.com/francis-codex/seedless](https://github.com/francis-codex/seedless)
+- org: [github.com/jabari-labs](https://github.com/jabari-labs)
 - twitter: [@seedless_wallet](https://x.com/seedless_wallet)
 
 ---
