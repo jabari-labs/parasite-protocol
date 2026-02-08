@@ -12,20 +12,20 @@ date: february 2026
 
 ## table of contents
 
-1. what is this
-2. the problem
-3. the solution
-4. how it works
-5. architecture
-6. privacy layer
-7. market types
-8. integrations
-9. user experience
-10. revenue model
-11. tech stack
-12. roadmap
-13. security
-14. closing thoughts
+1. [what is this](#what-is-this)
+2. [the problem](#the-problem)
+3. [the solution](#the-solution)
+4. [how it works](#how-it-works)
+5. [architecture](#architecture)
+6. [privacy layer](#privacy-layer)
+7. [market types](#market-types)
+8. [integrations](#integrations)
+9. [user experience](#user-experience)
+10. [revenue model](#revenue-model)
+11. [tech stack](#tech-stack)
+12. [roadmap](#roadmap)
+13. [security](#security)
+14. [closing thoughts](#closing-thoughts)
 
 ---
 
@@ -35,9 +35,9 @@ parasite is a prediction market where no one can see your bets.
 
 you can bet on crypto prices, solana ecosystem events, and real-world outcomes. your positions stay private until the market resolves. no one knows what you bet, how much you bet, or which side you took.
 
-the protocol plugs into existing infrastructure - pyth for prices, switchboard for on-chain data, kalshi for real-world events. it feeds off the entire ecosystem. the more solana grows, the more markets parasite can offer.
+the protocol plugs into existing infrastructure - [pyth](https://pyth.network/) for prices, [switchboard](https://switchboard.xyz/) for on-chain data, [kalshi](https://kalshi.com/) for real-world events. it feeds off the entire ecosystem. the more solana grows, the more markets parasite can offer.
 
-built on top of seedless wallet for passkey authentication and gasless transactions. no seed phrases. no gas fees. just predictions.
+built on top of [seedless wallet](https://github.com/francis-codex/seedless) for passkey authentication and gasless transactions. no seed phrases. no gas fees. just predictions.
 
 ---
 
@@ -47,7 +47,7 @@ prediction markets are broken in three ways.
 
 **no privacy**
 
-every major platform exposes your positions publicly. polymarket shows everything on-chain. kalshi requires kyc. drift is fully transparent.
+every major platform exposes your positions publicly. [polymarket](https://polymarket.com/) shows everything on-chain. [kalshi](https://kalshi.com/) requires kyc. [drift](https://www.drift.trade/) is fully transparent.
 
 this causes real problems:
 - whales get front-run
@@ -182,7 +182,7 @@ three categories at launch.
 
 **crypto prices**
 
-direct price predictions using pyth oracle.
+direct price predictions using [pyth](https://pyth.network/) oracle.
 
 examples:
 - will sol be above 200 on march 31
@@ -193,19 +193,19 @@ resolution happens automatically when pyth reports the price at the specified ti
 
 **solana ecosystem**
 
-on-chain metrics using switchboard and direct rpc queries.
+on-chain metrics using [switchboard](https://switchboard.xyz/) and direct rpc queries.
 
 examples:
-- will jupiter exceed 5b monthly volume
-- will marinade tvl reach 2b
-- will helium hit 1m hotspots
+- will [jupiter](https://jup.ag/) exceed 5b monthly volume
+- will [marinade](https://marinade.finance/) tvl reach 2b
+- will [helium](https://www.helium.com/) hit 1m hotspots
 - will [nft collection] floor exceed 100 sol
 
 resolution uses verifiable on-chain data.
 
 **real-world events**
 
-global events through kalshi integration.
+global events through [kalshi](https://kalshi.com/) integration.
 
 examples:
 - federal reserve rate decisions
@@ -215,6 +215,8 @@ examples:
 
 resolution uses kalshi's regulated process.
 
+inspired by platforms like [solprice.now](https://solprice.now/) but with full privacy.
+
 **custom markets (future)**
 
 user-created markets with community resolution. this comes later.
@@ -223,7 +225,7 @@ user-created markets with community resolution. this comes later.
 
 ## integrations
 
-**seedless wallet**
+**[seedless wallet](https://github.com/francis-codex/seedless)**
 
 parasite is built on seedless. this provides:
 - passkey authentication (no seed phrases)
@@ -233,15 +235,15 @@ parasite is built on seedless. this provides:
 
 the same infrastructure, extended for predictions.
 
-**pyth network**
+**[pyth network](https://pyth.network/)**
 
 real-time price feeds for crypto assets. sol, btc, eth, and major solana tokens. used for market creation, real-time odds, and settlement.
 
-**switchboard**
+**[switchboard](https://switchboard.xyz/)**
 
 custom oracle data for solana-specific metrics. protocol tvl, dex volumes, validator stats. permissionless oracle creation means any metric can become a market.
 
-**kalshi**
+**[kalshi](https://kalshi.com/)**
 
 regulated prediction market for real-world events. parasite acts as a private interface to kalshi markets. users bet through parasite, parasite routes to kalshi, settlement flows back privately.
 
@@ -294,35 +296,35 @@ premium features like advanced analytics and api access. protocol integrations w
 
 **frontend**
 
-web: next.js, typescript, tailwind css, zustand for state
-mobile: react native with expo, typescript
-charts: lightweight charts from tradingview
-wallet: seedless sdk
+web: [next.js](https://nextjs.org/), typescript, [tailwind css](https://tailwindcss.com/), [zustand](https://github.com/pmndrs/zustand) for state
+mobile: [react native](https://reactnative.dev/) with [expo](https://expo.dev/), typescript
+charts: [lightweight charts](https://www.tradingview.com/lightweight-charts/) from tradingview
+wallet: [seedless sdk](https://github.com/francis-codex/seedless)
 
 **backend**
 
-runtime: node.js with fastify
+runtime: [node.js](https://nodejs.org/) with [fastify](https://fastify.dev/)
 language: typescript
-database: postgresql with encrypted position storage
-cache: redis for market data
-queue: bullmq for settlement jobs
-auth: passkey verification through seedless
+database: [postgresql](https://www.postgresql.org/) with encrypted position storage
+cache: [redis](https://redis.io/) for market data
+queue: [bullmq](https://bullmq.io/) for settlement jobs
+auth: passkey verification through [seedless](https://github.com/francis-codex/seedless)
 
 **integrations**
 
-pyth sdk for price feeds
-switchboard sdk for custom data
-kalshi rest api for real-world markets
-solana web3.js for blockchain interaction
-kora paymaster for gasless transactions
+[pyth sdk](https://docs.pyth.network/) for price feeds
+[switchboard sdk](https://docs.switchboard.xyz/) for custom data
+[kalshi rest api](https://trading-api.readme.io/reference/getting-started) for real-world markets
+[solana web3.js](https://solana-labs.github.io/solana-web3.js/) for blockchain interaction
+[kora paymaster](https://www.kora.network/) for gasless transactions
 
 **infrastructure**
 
-frontend on vercel
-backend on railway
-database on supabase or railway postgres
-monitoring with axiom
-ci/cd through github actions
+frontend on [vercel](https://vercel.com/)
+backend on [railway](https://railway.app/)
+database on [supabase](https://supabase.com/) or railway postgres
+monitoring with [axiom](https://axiom.co/)
+ci/cd through [github actions](https://github.com/features/actions)
 
 ---
 
@@ -382,7 +384,7 @@ prediction markets work better when positions are private.
 
 true price discovery happens when bets reflect genuine conviction, not herd behavior from copying visible whale positions. parasite makes this possible.
 
-the protocol feeds off existing infrastructure. pyth, switchboard, kalshi, seedless - all of it combined into one private prediction experience. no custom programs. no audit delays. just building on what already works.
+the protocol feeds off existing infrastructure. [pyth](https://pyth.network/), [switchboard](https://switchboard.xyz/), [kalshi](https://kalshi.com/), [seedless](https://github.com/francis-codex/seedless) - all of it combined into one private prediction experience. no custom programs. no audit delays. just building on what already works.
 
 privacy is the feature. simplicity is the experience. solana is the foundation.
 
@@ -392,9 +394,9 @@ i built this brick by brick. now it is time to ship.
 
 links
 
-github: github.com/francis-codex/parasite-protocol
-seedless: github.com/francis-codex/seedless
-twitter: @seedless_wallet
+- github: [github.com/francis-codex/parasite-protocol](https://github.com/francis-codex/parasite-protocol)
+- seedless: [github.com/francis-codex/seedless](https://github.com/francis-codex/seedless)
+- twitter: [@seedless_wallet](https://x.com/seedless_wallet)
 
 ---
 
