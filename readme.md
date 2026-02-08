@@ -2,6 +2,8 @@
 
 private prediction markets on solana
 
+**the darkpaper**
+
 ---
 
 author: francis
